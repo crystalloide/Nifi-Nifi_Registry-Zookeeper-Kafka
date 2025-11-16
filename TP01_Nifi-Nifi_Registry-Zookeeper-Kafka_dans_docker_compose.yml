@@ -4,7 +4,7 @@ services:
     hostname: zookeeper
     container_name: zookeeper
     mem_limit: 1g
-    cpus: 0.5
+    cpus: 1.0
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_TICK_TIME: 2000
@@ -31,7 +31,7 @@ services:
     hostname: kafka
     container_name: kafka
     mem_limit: 1g
-    cpus: 0.5
+    cpus: 1.0
     depends_on:
       - zookeeper
     ports:
@@ -49,8 +49,8 @@ services:
     image: apache/nifi-registry:1.28.1
     hostname: nifi-registry
     container_name: nifi-registry
-    mem_limit: 1g
-    cpus: 0.5
+    mem_limit: 2g
+    cpus: 1.0
     ports:
       - "18080:18080"
 
@@ -59,7 +59,7 @@ services:
     image: apache/nifi:1.28.1
     hostname: nifi
     container_name: nifi
-    mem_limit: 1g
+    mem_limit: 2g
     cpus: 1.5
     depends_on:
       - zookeeper
@@ -89,4 +89,5 @@ volumes:
   nifi_content:
   nifi_database:
   nifi_flowfile:
+
   nifi_provenance:
