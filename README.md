@@ -29,7 +29,7 @@ cat TP01_Nifi-Nifi_Registry-Zookeeper-Kafka_dans_docker_compose.yml
 ```
 
 
-## 3°) Explications : 
+### 3°) Explications : 
 
 ```md
 Ce fichier docker-compose.yml configure un conteneur NiFi avec les éléments suivants :
@@ -63,7 +63,7 @@ docker compose -f TP01_Nifi-Nifi_Registry-Zookeeper-Kafka_dans_docker_compose.ym
 docker ps -a
 ```
 
-## 5°) Accès à l'UI Nifi : 
+### 5°) Accès à l'UI Nifi : 
 
 ```md
 
@@ -78,12 +78,12 @@ Note : il faudra accepter l'alerte de sécurité et passer outre
 C'est dû au certificat auto-signé généré par NiFi lors de la première connexion.
 ```
 
-## 6°) TP exemple intéraction Nifi et Kafka : 
+### 6°) TP exemple intéraction Nifi et Kafka : 
 
 
 
 ##
-## (Optionnel) Interface Nifi-Registry : http://nifi-registry:18080
+### (Optionnel) Interface Nifi-Registry : http://nifi-registry:18080
 ##
 ```sh
 ## Avec un navigateur web : on va sur l'URL mappée : 
@@ -350,7 +350,7 @@ exit
 ```
 
 
-## 7°) Pour arrêter le cluster :
+### 7°) Pour arrêter le cluster :
 
 #### Remarque  : pour seulement arrêter notre environnement si besoin :
 ```sh
