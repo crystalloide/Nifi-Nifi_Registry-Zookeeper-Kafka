@@ -1,4 +1,4 @@
-## Environnement démonstration Nifi NifiRegistry Zookeeper Kafka avec docker compose :
+## Environnement démonstration Nifi Nifi-Registry Zookeeper Kafka avec docker compose :
 
 Notre démonstration donne accès à Nifi 1.28.1, Nifi Registry 1.28.1, Zookeeper et Kafka (Confluent Platform 7.9.2)
 
