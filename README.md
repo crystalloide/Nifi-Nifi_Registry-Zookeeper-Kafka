@@ -353,7 +353,7 @@ docker compose -f TP01_Nifi-Nifi_Registry-Zookeeper-Kafka_dans_docker_compose.ym
 ```
 #### Remarque  : pour arrêter et supprimer totalement notre environnement si besoin :
 ```sh
-docker compose -f TP01_Nifi-Nifi_Registry-Zookeeper-Kafka_dans_docker_compose.yml down
+docker compose -f TP01_Nifi-Nifi_Registry-Zookeeper-Kafka_dans_docker_compose.yml down -v
 ```
 
 
