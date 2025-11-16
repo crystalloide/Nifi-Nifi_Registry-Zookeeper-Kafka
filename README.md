@@ -85,6 +85,7 @@ C'est dû au certificat auto-signé généré par NiFi lors de la première conn
 ##############################################################################################
 ## (Optionnel) Interface Nifi-Registry : http://nifi-registry:18080
 ##############################################################################################
+```sh
 ## Avec un navigateur web : on va sur l'URL mappée : 
 http://127.0.0.1:18080/nifi-registry/
 
@@ -343,6 +344,7 @@ kafka-console-consumer --topic test-topic-sortie --bootstrap-server localhost:90
 
 #### Penser à sortir du conteneur également : 
 exit 
+```
 
 
 ## 7°) Pour arrêter le cluster :
