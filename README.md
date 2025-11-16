@@ -2,13 +2,22 @@
 
 Notre démonstration donne accès à Nifi 1.28.1, Nifi Registry 1.28.1, Zookeeper et Kafka (Confluent Platform 7.9.2)
 
+### 1°) Remarque :   Pensez aux dispositifs éventuels actifs (UFW, APPARMOR SELINUX etc)
 
-### 0°) Réupération du projet en local : 
+Paramétrer ou désactiver les dispositifs si besoin : exemple pour un Ubuntu : sur un environnement de test : 
+
+```sh
+sudo systemctl status ufw
+sudo systemctl disable ufw
+sudo systemctl status apparmor
+sudo systemctl disable apparmor
+```
+
+### 2°) Réupération du projet en local : 
 
   Sur une VM ou machine sans installation préalable, on aura installé Docker / Docker Compose : 
   
   Si besoin, instructions d’installation ici : https://docs.docker.com/compose/install
-
 
 ```sh
 cd ~
@@ -20,7 +29,8 @@ cat TP01_Nifi-Nifi_Registry-Zookeeper-Kafka_dans_docker_compose.yml
 ```
 
 
-## Explications : 
+## 3°) Explications : 
+
 ```md
 Ce fichier docker-compose.yml configure un conteneur NiFi avec les éléments suivants :
 - image officielle Apache NiFi 1.28.1
@@ -45,7 +55,7 @@ La variable NIFI_WEB_HTTPS_PORT=8443 spécifie le port HTTPS sur lequel NiFi éc
 
 ```
 
-### 1°)	Lancement du cluster :
+### 4°)	Lancement du cluster :
 
 ```sh
 
@@ -53,7 +63,8 @@ docker compose -f TP01_Nifi-Nifi_Registry-Zookeeper-Kafka_dans_docker_compose.ym
 docker ps -a
 ```
 
-## Explications : 
+## 5°) Accès à l'UI Nifi : 
+
 ```md
 
 Dans notre exemple, les valeurs de login/mdp sont déjà fixées dans le fichier docker-compose.yml : 
@@ -68,7 +79,7 @@ C'est dû au certificat auto-signé généré par NiFi lors de la première conn
 ```
 
 
-## 3°) Pour arrêter le cluster :
+## 7°) Pour arrêter le cluster :
 
 ```sh
 docker compose -f TP01_Nifi-Nifi_Registry-Zookeeper-Kafka_dans_docker_compose.yml down -v
