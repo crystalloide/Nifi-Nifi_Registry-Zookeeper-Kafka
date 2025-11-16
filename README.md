@@ -24,8 +24,10 @@ cat TP01_Nifi-Nifi_Registry-Zookeeper-Kafka_dans_docker_compose.yml
 ```md
 Ce fichier docker-compose.yml configure un conteneur NiFi avec les éléments suivants :
 - image officielle Apache NiFi 1.28.1
-- le port HTTPS 8443 du conteneur est mappé au port 8443 de l'hôte, ce qui permettra d'accéder à NiFi via https://localhost:8443/nifi1
-- Des variables d'environnement sont définies pour configurer le port HTTPS et créer un utilisateur unique pour l'authentification.
+- le port HTTPS 8443 du conteneur est mappé au port 8443 de l'hôte,
+  ce qui permettra d'accéder à NiFi via https://localhost:8443/nifi1
+- Des variables d'environnement sont définies pour configurer le port HTTPS
+  et créer un utilisateur unique pour l'authentification.
 - Des volumes sont montés pour persister les données et la configuration de NiFi.
 - Le conteneur est configuré pour redémarrer automatiquement en cas d'arrêt inattendu.
 
