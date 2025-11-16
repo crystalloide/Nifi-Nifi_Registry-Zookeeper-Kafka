@@ -15,6 +15,7 @@ cd ~
 rm -Rf Big-Data-Cluster
 git clone https://github.com/crystalloide/Nifi-Nifi_Registry-Zookeeper-Kafka/
 cd Nifi-Nifi_Registry-Zookeeper-Kafka
+ls
 ```
 
 ### 1°)	Lancement du cluster :
