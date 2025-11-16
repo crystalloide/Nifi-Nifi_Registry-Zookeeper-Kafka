@@ -25,7 +25,7 @@ cat TP01_Nifi-Nifi_Registry-Zookeeper-Kafka_dans_docker_compose.yml
 Ce fichier docker-compose.yml configure un conteneur NiFi avec les éléments suivants :
 - image officielle Apache NiFi 1.28.1
 - le port HTTPS 8443 du conteneur est mappé au port 8443 de l'hôte,
-  ce qui permettra d'accéder à NiFi via https://localhost:8443/nifi1
+  ce qui permettra d'accéder à NiFi via https://localhost:8443/nifi
 - Des variables d'environnement sont définies pour configurer le port HTTPS
   et créer un utilisateur unique pour l'authentification.
 - Des volumes sont montés pour persister les données et la configuration de NiFi.
@@ -33,6 +33,7 @@ Ce fichier docker-compose.yml configure un conteneur NiFi avec les éléments su
 
 - NIFI_SECURITY_USER_AUTHORIZER=single-user-authorizer permet d'activer l'autorisation à utilisateur unique
 - NIFI_SECURITY_USER_LOGIN_IDENTITY_PROVIDER=single-user-provider permet de configurer le fournisseur d'identité sur "utilisateur unique"
+
 Ces ajouts, combinés avec les variables SINGLE_USER_CREDENTIALS_USERNAME et SINGLE_USER_CREDENTIALS_PASSWORD, 
 permettent de configurer l'authentification à utilisateur unique.
 
@@ -41,6 +42,7 @@ permettent de configurer l'authentification à utilisateur unique.
 
 La variable NIFI_WEB_HTTPS_HOST=0.0.0.0 permet à NiFi d'écouter sur toutes les interfaces réseau du conteneur.
 La variable NIFI_WEB_HTTPS_PORT=8443 spécifie le port HTTPS sur lequel NiFi écoutera.
+
 ```
 
 ### 1°)	Lancement du cluster :
@@ -51,6 +53,19 @@ docker compose -f TP01_Nifi-Nifi_Registry-Zookeeper-Kafka_dans_docker_compose.ym
 docker ps -a
 ```
 
+## Explications : 
+```md
+
+Dans notre exemple, les valeurs de login/mdp sont déjà fixées dans le fichier docker-compose.yml : 
+
+      - SINGLE_USER_CREDENTIALS_USERNAME=nifi
+      - SINGLE_USER_CREDENTIALS_PASSWORD=nifipassword
+
+On vérifie simplement que l'on peut désormais accéder à l'interface web de NiFi 
+en ouvrant un navigateur sur l'URL https://localhost:8443/nifi 
+Note : il faudra accepter l'alerte de sécurité et passer outre 
+C'est dû au certificat auto-signé généré par NiFi lors de la première connexion.
+```
 
 
 ## 3°) Pour arrêter le cluster :
