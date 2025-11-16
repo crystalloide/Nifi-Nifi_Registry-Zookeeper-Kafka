@@ -1,0 +1,104 @@
+########################################################################################################
+## TP03 - Nifi : Mise en oeuvre d'un flux NIFI complet :
+########################################################################################################
+## - Ingestion d’un fichier CSV
+## - Enrichissement par métadonnées
+## - Traitement de transformation simple
+## - Routage vers une cible (local ou HDFS)
+## - Visualisation du cheminement des données
+########################################################################################################
+
+
+########################################################################################################
+## 1. Création du flux (Process Group)
+########################################################################################################
+•	Créer un Process Group intitulé Flux_ingestion_CSV
+•	Entrer dans le groupe pour y construire le pipeline
+
+
+
+########################################################################################################
+## 2. Ajout et paramétrage des processeurs
+########################################################################################################
+
+a1) GenerateFlowFile (génération de fichier csv)
+	o	Propriétés :
+		Custom Text : contenu CSV simulé
+		Run Schedule : 10 sec
+	
+a2) GetFile (lecture d'un fichier local (clients.csv)
+	o	Propriétés à configurer :
+		Input Directory : dossier contenant le fichier
+		Keep Source File : false (ou true pour debug)
+
+
+b) UpdateAttribute
+	•	Ajout de métadonnées utiles
+	•	Exemple de propriétés :
+	o	flux.nom = IngestionClients
+	o	traitement.date = ${now():format('yyyy-MM-dd')}
+	
+c) ReplaceText 
+	•	Utilisation : supprimer une entête, ajouter un tag, ou nettoyer une colonne
+	•	Exemple : remplacer un mot ou insérer une ligne
+	o	Search Value : (.*)
+	o	Replacement Value : Ligne modifiée : $1
+	o	Replacement Strategy : Regex Replace
+	
+d) LogAttribute
+	•	Objectif : visualiser les métadonnées et contenus
+	•	Aide au debug, sans modifier le flux
+	
+	
+e) PutFile (ou PutHDFS selon l’environnement)
+	•	PutFile : écrire dans un répertoire local
+	o	Directory : C:/nifi-output/
+	o	Conflict Resolution Strategy : replace
+	•	PutHDFS : si cluster Hadoop disponible (adresse + répertoire cible)
+
+
+########################################################################################################
+## 3. Connexion des processeurs
+########################################################################################################
+•	Chaque processeur est relié avec les relations success
+•	Ajouter les relations failure vers un Log ou un funnel pour capturer les erreurs
+
+
+
+########################################################################################################
+## 4. Démarrage du flux
+########################################################################################################
+•	Lancer le flux globalement
+•	Vérifier :
+o	les FlowFiles qui circulent (bulles bleues)
+o	les statistiques (nbre de fichiers, taille)
+o	la complétion jusqu’à l’écriture cible
+
+
+########################################################################################################
+## 5. Vérification du résultat
+########################################################################################################
+•	Vérifier la présence du fichier traité dans le répertoire final
+•	Ouvrir le fichier pour s’assurer des modifications appliquées
+•	Ouvrir Data Provenance dans NIFI : suivre le parcours du fichier étape par étape
+
+
+########################################################################################################
+## Bonus – Flux JSON simulé
+########################################################################################################
+•	Utiliser GenerateFlowFile avec contenu JSON :
+
+json
+
+{ "user": "Alice", "action": "login", "timestamp": "2025-03-28T10:12:00Z" }
+
+•	Appliquer un EvaluateJsonPath pour extraire des champs
+
+
+########################################################################################################
+## Stocker avec PutFile ou envoyer dans Elasticsearch via PutElasticsearchHttp
+########################################################################################################
+
+########################################################################################################
+## Fin du TP03 - Nifi : Mise en oeuvre d'un flux NIFI complet :
+########################################################################################################
