@@ -239,7 +239,8 @@ https://localhost:8443/nifi
 	Kerberos Principal				No value set
 	Kerberos Keytab					No value set
 >	Username						admin
->	Password						admin						<<<<< IMPORTANT : à resaisir si vous avez importé le TP à partir du fichier JSON						
+>	Password						admin						<<<<< IMPORTANT : à resaisir si vous avez importé le TP
+                                                                                  à partir du fichier JSON						
 	SSL Context Service				No value set
 	Kafka Key						No value set	
 >	Key Attribute Encoding			UTF-8 Encoded
@@ -247,7 +248,8 @@ https://localhost:8443/nifi
 >	Acknowledgment Wait Time		5 secs
 >	Max Metadata Wait Time			5 sec
 	Partitioner class				DefaultPartitioner
->	Partition						0							<<<< IMPORTANT : on compte à partir de 0 dans Kafka :-) : la première partition est la partition "0"
+>	Partition						0							<<<< IMPORTANT : on compte à partir de 0 dans Kafka :-)
+                                                                               : la première partition est la partition "0"
 >	Compression Type				none
 
 
@@ -261,7 +263,8 @@ https://localhost:8443/nifi
 
 ## Le 2nd groupe nommé "Consommation_Message_dans_Kafka" qui est composé de deux processeurs :
 
-## 1°) un processor "ConsumeKafka_2_6" pour récupérer (lire/consommer) les messages du topic alimenté par le 1er groupe précédent :
+## 1°) un processor "ConsumeKafka_2_6" pour récupérer (lire/consommer) les messages du topic
+       alimenté par le 1er groupe précédent :
 
 ## ConsumeKafka_2_6 1.28.0 
 
