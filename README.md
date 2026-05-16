@@ -21,7 +21,7 @@ sudo systemctl disable apparmor
 
 ```sh
 cd ~
-rm -Rf Big-Data-Cluster
+rm -Rf Nifi-Nifi_Registry-Zookeeper-Kafka
 git clone https://github.com/crystalloide/Nifi-Nifi_Registry-Zookeeper-Kafka/
 cd Nifi-Nifi_Registry-Zookeeper-Kafka
 ls
