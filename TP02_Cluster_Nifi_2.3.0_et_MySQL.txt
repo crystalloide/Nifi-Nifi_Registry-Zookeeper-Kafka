@@ -643,7 +643,10 @@ exit
 ## Connection à Nifi : 
 ## Avec un navigateur web :  https://nifi1:8443/nifi/
 
-## Remarque : si le TP est fait sur Ubuntu WSL2, il faut lancer le navigateur en ligne de commande avec l'URL souhaitée.
+## Remarque : si le TP est fait sur Ubuntu WSL2, il faut lancer le navigateur de windows en ligne de commande avec l'URL souhaitée.
+https://nifi1:8443/nifi/ 
+
+## Sur une VM Linux :
 firefox https://nifi1:8443/nifi/ 
 
 ## Sur un autre terminal : 
