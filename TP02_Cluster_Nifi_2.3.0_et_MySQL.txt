@@ -39,7 +39,6 @@ vi 'TP02_Lancement_Nifi_2.3.x_stand-alone_basique_avec_docker_compose.yml'
 
 ## Début du fichier : 
 
-
 networks:
   nifi_network:
     driver: bridge
@@ -49,59 +48,64 @@ networks:
 
 services:
   zookeeper1:
-    image: 'docker.io/bitnami/zookeeper:latest'
+    image: 'confluentinc/cp-zookeeper:7.9.2'
     hostname: zookeeper1
     container_name: zookeeper1
     # mem_limit: 1g
     # cpus: 0.5
     environment:
-      ALLOW_ANONYMOUS_LOGIN: "yes"
-      ZOO_MY_ID: 1
-      ZOO_SERVER_ID: 1
-      ZOO_SERVERS: "zookeeper1:2888:3888,zookeeper2:2888:3888,zookeeper3:2888:3888"
+      ZOOKEEPER_SERVER_ID: 1
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+      ZOOKEEPER_INIT_LIMIT: 5
+      ZOOKEEPER_SYNC_LIMIT: 2
+      ZOOKEEPER_SERVERS: "zookeeper1:2888:3888;zookeeper2:2888:3888;zookeeper3:2888:3888"
     networks:
       nifi_network:
         ipv4_address: 192.168.0.11
     volumes:
-      - zk_conf1:/conf
-      - zk_data1:/bitnami      
+      - zk_conf1:/var/lib/zookeeper/log
+      - zk_data1:/var/lib/zookeeper/data      
 
   zookeeper2:
-    image: 'docker.io/bitnami/zookeeper:latest'
+    image: 'confluentinc/cp-zookeeper:7.9.2'
     hostname: zookeeper2
     container_name: zookeeper2
     # mem_limit: 1g
     # cpus: 0.5
     environment:
-      ALLOW_ANONYMOUS_LOGIN: "yes"
-      ZOO_MY_ID: 2
-      ZOO_SERVER_ID: 2
-      ZOO_SERVERS: "zookeeper1:2888:3888,zookeeper2:2888:3888,zookeeper3:2888:3888"
+      ZOOKEEPER_SERVER_ID: 2
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+      ZOOKEEPER_INIT_LIMIT: 5
+      ZOOKEEPER_SYNC_LIMIT: 2
+      ZOOKEEPER_SERVERS: "zookeeper1:2888:3888;zookeeper2:2888:3888;zookeeper3:2888:3888"
     networks:
       nifi_network:
         ipv4_address: 192.168.0.12
     volumes:
-      - zk_conf2:/conf
-      - zk_data2:/bitnami  
+      - zk_conf2:/var/lib/zookeeper/log
+      - zk_data2:/var/lib/zookeeper/data  
 
   zookeeper3:
-    image: 'docker.io/bitnami/zookeeper:latest'
+    image: 'confluentinc/cp-zookeeper:7.9.2'
     hostname: zookeeper3
     container_name: zookeeper3
     # mem_limit: 1g
     # cpus: 0.5
     environment:
-      ALLOW_ANONYMOUS_LOGIN: "yes"
-      ZOO_MY_ID: 3
-      ZOO_SERVER_ID: 3
-      ZOO_SERVERS: "zookeeper1:2888:3888,zookeeper2:2888:3888,zookeeper3:2888:3888"
+      ZOOKEEPER_SERVER_ID: 3
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+      ZOOKEEPER_INIT_LIMIT: 5
+      ZOOKEEPER_SYNC_LIMIT: 2
+      ZOOKEEPER_SERVERS: "zookeeper1:2888:3888;zookeeper2:2888:3888;zookeeper3:2888:3888"
     networks:
       nifi_network:
         ipv4_address: 192.168.0.13
     volumes:
-      # - zk_data3:/data
-      - zk_conf3:/conf
-      - zk_data3:/bitnami 
+      - zk_conf3:/var/lib/zookeeper/log
+      - zk_data3:/var/lib/zookeeper/data 
 
   tls-toolkit:
     image: apache/nifi:1.28.1
@@ -432,7 +436,6 @@ volumes:
     driver: local
   nifi3_logs:
     driver: local
-
 
 ## Fin du fichier
 
