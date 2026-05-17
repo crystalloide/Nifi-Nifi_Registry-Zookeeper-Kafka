@@ -510,8 +510,12 @@ docker logs nifi1 | grep 'https:'
 
 
 ## Après quelques minutes, accès à l'UI via un navigateur web ici : https://nifi1:8443/nifi
-## En ligne de commande : 
+
+## Sur Linux (pas WSL2 !) en ligne de commande : 
 firefox https://nifi1:8443/nifi
+
+## Sur WSL2 Windows : dans le navigateur web :
+https://nifi1:8443/nifi
 
 ## Rappel : 
       SINGLE_USER_CREDENTIALS_USERNAME: "nifi"
@@ -648,6 +652,10 @@ https://nifi1:8443/nifi/
 
 ## Sur une VM Linux :
 firefox https://nifi1:8443/nifi/ 
+
+## Rappel : 
+      SINGLE_USER_CREDENTIALS_USERNAME: "nifi"
+      SINGLE_USER_CREDENTIALS_PASSWORD: "nifipassword"
 
 ## Sur un autre terminal : 
 
