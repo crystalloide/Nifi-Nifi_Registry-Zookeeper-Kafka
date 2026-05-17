@@ -25,6 +25,8 @@ rm -Rf Nifi-Nifi_Registry-Zookeeper-Kafka
 git clone https://github.com/crystalloide/Nifi-Nifi_Registry-Zookeeper-Kafka/
 cd Nifi-Nifi_Registry-Zookeeper-Kafka
 ls
+```
+```sh
 cat TP01_Nifi-Nifi_Registry-Zookeeper-Kafka_dans_docker_compose.yml
 ```
 
