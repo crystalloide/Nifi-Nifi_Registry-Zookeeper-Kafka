@@ -654,16 +654,16 @@ firefox https://nifi1:8443/nifi/
 docker ps -a 
 
 ## Affichage :                                                                                                                                                                               NAMES
-	CONTAINER ID   IMAGE                        COMMAND                   CREATED         STATUS                     PORTS                                                                                                           NAMES
-	17076a4898b1   apache/nifi:2.3.0            "/bin/sh -c '\n  slee…"   8 minutes ago   Up 8 minutes               0.0.0.0:8443->8443/tcp, [::]:8443->8443/tcp, 8000/tcp, 10000/tcp, 0.0.0.0:9088->9088/tcp, [::]:9088->9088/tcp   nifi1
-	30dc32f813ad   apache/nifi:2.3.0            "/bin/sh -c '\n  slee…"   8 minutes ago   Up 8 minutes               8000/tcp, 10000/tcp, 0.0.0.0:8445->8443/tcp, [::]:8445->8443/tcp, 0.0.0.0:9090->9088/tcp, [::]:9090->9088/tcp   nifi3
-	e369e2a92d02   apache/nifi:2.3.0            "/bin/sh -c '\n  slee…"   8 minutes ago   Up 8 minutes               8000/tcp, 10000/tcp, 0.0.0.0:8444->8443/tcp, [::]:8444->8443/tcp, 0.0.0.0:9089->9088/tcp, [::]:9089->9088/tcp   nifi2
-	a7f56b576ebf   apache/nifi:1.28.1           "bash -c '/opt/nifi/…"    8 minutes ago   Exited (0) 8 minutes ago                                                                                                                   nifi-toolkit
-	5e66b7416503   mysql:latest                 "docker-entrypoint.s…"    8 minutes ago   Up 8 minutes               0.0.0.0:3306->3306/tcp, [::]:3306->3306/tcp, 33060/tcp                                                          mysql
-	bede8e024af3   apache/nifi-registry:2.3.0   "../scripts/start.sh"     8 minutes ago   Up 8 minutes               0.0.0.0:18080->18080/tcp, [::]:18080->18080/tcp, 18443/tcp                                                      nifi-registry
-	24a41539b965   bitnami/zookeeper:latest     "/opt/bitnami/script…"    8 minutes ago   Up 8 minutes               2181/tcp, 2888/tcp, 3888/tcp, 8080/tcp                                                                          zookeeper3
-	c30390d793b0   bitnami/zookeeper:latest     "/opt/bitnami/script…"    8 minutes ago   Up 8 minutes               2181/tcp, 2888/tcp, 3888/tcp, 8080/tcp                                                                          zookeeper2
-	bc198ec31e2c   bitnami/zookeeper:latest     "/opt/bitnami/script…"    8 minutes ago   Up 8 minutes               2181/tcp, 2888/tcp, 3888/tcp, 8080/tcp                                                                          zookeeper1
+	CONTAINER ID   IMAGE                      		  	COMMAND                   CREATED         STATUS                     PORTS                                                                                                           NAMES
+	17076a4898b1   apache/nifi:2.3.0           			"/bin/sh -c '\n  slee…"   8 minutes ago   Up 8 minutes               0.0.0.0:8443->8443/tcp, [::]:8443->8443/tcp, 8000/tcp, 10000/tcp, 0.0.0.0:9088->9088/tcp, [::]:9088->9088/tcp   nifi1
+	30dc32f813ad   apache/nifi:2.3.0        			"/bin/sh -c '\n  slee…"   8 minutes ago   Up 8 minutes               8000/tcp, 10000/tcp, 0.0.0.0:8445->8443/tcp, [::]:8445->8443/tcp, 0.0.0.0:9090->9088/tcp, [::]:9090->9088/tcp   nifi3
+	e369e2a92d02   apache/nifi:2.3.0         			"/bin/sh -c '\n  slee…"   8 minutes ago   Up 8 minutes               8000/tcp, 10000/tcp, 0.0.0.0:8444->8443/tcp, [::]:8444->8443/tcp, 0.0.0.0:9089->9088/tcp, [::]:9089->9088/tcp   nifi2
+	a7f56b576ebf   apache/nifi:1.28.1        			"bash -c '/opt/nifi/…"    8 minutes ago   Exited (0) 8 minutes ago                                                                                                                   nifi-toolkit
+	5e66b7416503   mysql:latest                			"docker-entrypoint.s…"    8 minutes ago   Up 8 minutes               0.0.0.0:3306->3306/tcp, [::]:3306->3306/tcp, 33060/tcp                                                          mysql
+	bede8e024af3   apache/nifi-registry:2.3.0   		"../scripts/start.sh"     8 minutes ago   Up 8 minutes               0.0.0.0:18080->18080/tcp, [::]:18080->18080/tcp, 18443/tcp                                                      nifi-registry
+	24a41539b965   confluentinc/cp-zookeeper:7.9.2      "/etc/confluent/dock…"    8 minutes ago   Up 8 minutes               2181/tcp, 2888/tcp, 3888/tcp, 8080/tcp                                                                          zookeeper3
+	c30390d793b0   confluentinc/cp-zookeeper:7.9.2      "/etc/confluent/dock…"    8 minutes ago   Up 8 minutes               2181/tcp, 2888/tcp, 3888/tcp, 8080/tcp                                                                          zookeeper2
+	bc198ec31e2c   confluentinc/cp-zookeeper:7.9.2      "/etc/confluent/dock…"    8 minutes ago   Up 8 minutes               2181/tcp, 2888/tcp, 3888/tcp, 8080/tcp                                                                          zookeeper1
 
 
 
