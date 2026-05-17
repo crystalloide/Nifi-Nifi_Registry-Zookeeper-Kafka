@@ -510,14 +510,20 @@ firefox https://nifi1:8443/nifi
 ## Rq. : on peut le récupérer ici aussi : https://drive.google.com/file/d/15eV8zCxM475k_z2zA3gluzb-LpYc-1x6/view?usp=drive_link
 
 ## Copie du driver "mysql-connector-j-9.3.0.jar" dans "/home/user/mysql-connector-j-9.3.0.jar"
+
+## Etape suivante qui n'est plus nécessaire puisque les drivers sont fournis dans le projet cloné : 
 ## On le copie depuis windows vers Ubuntu/WSL2 :
 cp "/mnt/c/Partages/Nifi/12. Drivers SGBD-R/mysql-connector-j-9.3.0.jar" ~
-
-## Puis on le copie de le machine Ubuntu vers les conteneurs Nifi dans dockers : 
+## On copie le driver vers les conteneurs Nifi dans dockers : 
 docker cp /home/user/mysql-connector-j-9.3.0.jar nifi1:/opt/nifi/nifi-current/lib
 docker cp /home/user/mysql-connector-j-9.3.0.jar nifi2:/opt/nifi/nifi-current/lib
 docker cp /home/user/mysql-connector-j-9.3.0.jar nifi3:/opt/nifi/nifi-current/lib
-  
+
+## !! Etape à faire désormais : !! 
+## On récupère directement le driver dans le répertoire "Partages/Nifi/drivers_SRBD-R" du projet clôné : 
+docker cp /home/user/Partages/Nifi/drivers_SRBD-R/mysql-connector-j-9.3.0.jar nifi1:/opt/nifi/nifi-current/lib
+docker cp /home/user/Partages/Nifi/drivers_SRBD-R/mysql-connector-j-9.3.0.jar nifi2:/opt/nifi/nifi-current/lib
+docker cp /home/user/Partages/Nifi/drivers_SRBD-R/mysql-connector-j-9.3.0.jar nifi3:/opt/nifi/nifi-current/lib
 ## Étapes supplémentaires si besoin : 
 ## sudo chmod 777 -Rf ~/user/nifi
 
