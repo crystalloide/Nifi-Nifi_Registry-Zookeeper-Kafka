@@ -521,9 +521,9 @@ docker cp /home/user/mysql-connector-j-9.3.0.jar nifi3:/opt/nifi/nifi-current/li
 
 ## !! Etape à faire désormais : !! 
 ## On récupère directement le driver dans le répertoire "Partages/Nifi/drivers_SRBD-R" du projet clôné : 
-docker cp /home/user/Partages/Nifi/drivers_SRBD-R/mysql-connector-j-9.3.0.jar nifi1:/opt/nifi/nifi-current/lib
-docker cp /home/user/Partages/Nifi/drivers_SRBD-R/mysql-connector-j-9.3.0.jar nifi2:/opt/nifi/nifi-current/lib
-docker cp /home/user/Partages/Nifi/drivers_SRBD-R/mysql-connector-j-9.3.0.jar nifi3:/opt/nifi/nifi-current/lib
+docker cp /home/user/Nifi-Nifi_Registry-Zookeeper-Kafka/Partages/Nifi/drivers_SRBD-R/mysql-connector-j-9.3.0.jar nifi1:/opt/nifi/nifi-current/lib
+docker cp /home/user/Nifi-Nifi_Registry-Zookeeper-Kafka/Partages/Nifi/drivers_SRBD-R/mysql-connector-j-9.3.0.jar nifi2:/opt/nifi/nifi-current/lib
+docker cp /home/user/Nifi-Nifi_Registry-Zookeeper-Kafka/Partages/Nifi/drivers_SRBD-R/mysql-connector-j-9.3.0.jar nifi3:/opt/nifi/nifi-current/lib
 ## Étapes supplémentaires si besoin : 
 ## sudo chmod 777 -Rf ~/user/nifi
 
