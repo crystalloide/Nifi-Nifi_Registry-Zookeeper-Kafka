@@ -684,12 +684,12 @@ sudo docker inspect --format '{{ .NetworkSettings }}' mysql
 
 
 ## Etape inutile désormais :
-## Copie du fichier "TP13_Exemple_lecture_MySQL_et_preservation_Attribut_Nifi_2.3.0.json" dans "/home/user/..."
+## Copie du fichier "TP03_Exemple_lecture_MySQL_et_preservation_Attribut_Nifi_2.3.0.json" dans "/home/user/..."
 ## On le copie depuis windows vers Ubuntu/WSL2 :
-## cp "/mnt/c/Partages/Nifi/TP13_Exemple_lecture_MySQL_et_preservation_Attribut_Nifi_2.3.0.json" ~
+## cp "/mnt/c/Partages/Nifi/TP03_Exemple_lecture_MySQL_et_preservation_Attribut_Nifi_2.3.0.json" ~
 
 ## A faire par contre : on copie la définition du flow group depuis le répertoire du projet cloné :
-cp "/home/user/Nifi-Nifi_Registry-Zookeeper-Kafka/TP13_Exemple_lecture_MySQL_et_preservation_Attribut_Nifi_2.3.0.json" ~
+cp "/home/user/Nifi-Nifi_Registry-Zookeeper-Kafka/TP03_Exemple_lecture_MySQL_et_preservation_Attribut_Nifi_2.3.0.json" ~
 
 ## On le charge via l'UI Nifi en tirant un "Process Group" vers le canevas Nifi 
 ## puis en important la JSON à partir de /home/user 
