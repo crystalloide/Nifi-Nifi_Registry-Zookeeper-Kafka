@@ -14,6 +14,18 @@
 
 cd ~
 
+## ATTENTION : si vous faites le TP sur WSL2 sur Windows : voici le host sous windows à enrichir avec : 
+## Emplacement : C:\Windows\System32\drivers\etc\hosts
+
+127.0.0.1 nifi1
+127.0.0.1 nifi2
+127.0.0.1 nifi3
+127.0.0.1 nifi-registry
+127.0.0.1 mysql
+
+
+## ATTENTION : si vous faites le TP sur une VM Ubuntu : voici le host linux à enrichir avec : 
+
 sudo vi /etc/hosts
 
 ## rajouter 
@@ -23,6 +35,8 @@ sudo vi /etc/hosts
 192.168.0.30 nifi-registry
 192.168.0.50 mysql
 
+
+## 
 
 docker volume prune -a -f
 
